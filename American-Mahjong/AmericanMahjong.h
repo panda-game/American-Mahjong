@@ -47,11 +47,13 @@ public:
     void swap_ptrs_index(int index1, int index2); //索引1と索引2のポインタを入れ替える
     void print_my_tile(); // 手札を表示
     void print_tile(Tiles* ptr); // 牌の情報を表示する
+    void print_tiles(int player); // 引数のプレイヤー番号を元に手札を表示
     void print_cp1_tile(); // cp1の手札を表示
     void print_cp2_tile(); // cp2の手札を表示
     void print_cp3_tile(); // cp3の手札を表示
     void sort_player_tiles(); // 牌をソート
     void pon(int wind); // ぽん
+    bool pon_check(int ponPlayer, char discardType); // ポンが可能かチェック
     void print_introduction(int gameCount, Wind wind); // 今回のサイコロの数字と各プレーヤーの風を表示
     void trade_tiles1(); //　牌を交換する(1回目)
     void trade_tiles2(); //　牌を交換する(2回目)
@@ -66,10 +68,10 @@ public:
     int  count_type(int ponPlayer, string type); // 引数のタイプをいくつ所持しているかを返す
     void count_tileType(int x); // 手札にフラワーとジョーカーの牌がいくつあるかカウントする
     /*
-     void count_krack_bamboo_dot(int &a, int &b, int &c, int i); // 手札にクラック、バンブー、ドットタイプの牌がいくつあるかカウントする
-     void count_dragons(int &a, int &b, int &c); // 手札にドラゴンの牌がいくつあるかカウントする
-     void count_winds(int &a, int &b, int &c, int &d); // 手札にウィンドの牌がいくつあるかカウントする
-     void count_flower_joker(int &a, int &b); // 手札にフラワーとジョーカーの牌がいくつあるかカウントする
+    void count_krack_bamboo_dot(int &a, int &b, int &c, int i); // 手札にクラック、バンブー、ドットタイプの牌がいくつあるかカウントする
+    void count_dragons(int &a, int &b, int &c); // 手札にドラゴンの牌がいくつあるかカウントする
+    void count_winds(int &a, int &b, int &c, int &d); // 手札にウィンドの牌がいくつあるかカウントする
+    void count_flower_joker(int &a, int &b); // 手札にフラワーとジョーカーの牌がいくつあるかカウントする
      */
     void get_tehuda_index(int &a, int &b, int &c); // 交換する牌の索引を入手する(牌の交換時に必要な情報)
     void generate_random_three(int &a, int &b, int &c, unsigned int size); // ランダムに異なる3つの数字を生成する
